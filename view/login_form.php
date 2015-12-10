@@ -43,9 +43,21 @@ if(isset($_SESSION["error_info"]))
 
 <html> 
 <head>
-<?php include 'inc_head.php';?>
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+<link rel="icon" sizes="192x192"  href="images/android-icon-192x192.png">
+<link rel="shortcut icon" sizes="96x96" href="images/favicon-96x96.png">
+<link rel="manifest" href="images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/ms-icon-310x310.png">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/login-form-elements.css">
+<link rel="stylesheet" href="css/login-style.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+
 </head>
- <body style="padding-bottom:0;padding-top:0" class="indexBody">
+<body>
 	<?php
 	if( isset($show_failure_message) ) { ?>
 	<br/>
@@ -71,25 +83,78 @@ if(isset($_SESSION["error_info"]))
 		<?php } ?>
 	<br/>
 	<?php } ?>
- 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-offset-5 col-md-3">
-                <div class="form-login" width="100%">
-                <h4>Welcome to Vidiyal !!!</h4>
-                <form name="user_login" id="user_login" action="sw_login_view.php" method="post">
-                <input type="text" name="user_name" id="user_name" class="form-control input-sm chat-input" placeholder="username" />
-                </br>
-                <input type="password" name="password" id="password" class="form-control input-sm chat-input" placeholder="password" />
-                </br>
-                <div class="wrapper" width="300px">
-                <p><input type="submit" class="homebuttonFull" title="Login" id="login" value="Login"/></p>
-                </form>
-                </div>
+
+        <!-- Top content -->
+        <div class="top-content">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 sm-offset-12 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Welcome to Vidiyal</h3>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="glyphicon glyphicon-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+								<form name="user_login" id="user_login" action="sw_login_view.php" method="post" role="form" class="login-form">
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="form-username">Username</label>
+			                        	<input type="text" name="user_name" placeholder="Username..." class="form-username form-control" id="user_name">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-password">Password</label>
+			                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="password">
+			                        </div>
+									<button type="submit" class="btn">Sign in</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
  <!-- End container -->
-</body> 
+
+<script src="js/jquery-1.10.2.min.js"/></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.backstretch.min.js"></script> 
+<script>
+jQuery(document).ready(function() {
+	
+    /*
+        Fullscreen background
+    */
+    $.backstretch([
+                    "images/vidiyal_logo.png"
+	             ], {duration: 3000, fade: 750});
+    
+    /*
+        Form validation
+    */
+    $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
+    	$(this).removeClass('input-error');
+    });
+    
+    $('.login-form').on('submit', function(e) {
+    	
+    	$(this).find('input[type="text"], input[type="password"], textarea').each(function(){
+    		if( $(this).val() == "" ) {
+    			e.preventDefault();
+    			$(this).addClass('input-error');
+    		}
+    		else {
+    			$(this).removeClass('input-error');
+    		}
+    	});
+    	
+    });
+    
+    
+});
+</script>
+ </body> 
 </html>

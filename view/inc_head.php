@@ -4,6 +4,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+<link rel="icon" sizes="192x192"  href="images/android-icon-192x192.png">
+<link rel="shortcut icon" sizes="96x96" href="images/favicon-96x96.png">
+<link rel="manifest" href="images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/ms-icon-310x310.png">
+<meta name="theme-color" content="#ffffff">
+	
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-select.css" rel="stylesheet">
 <link rel="stylesheet" href="css/jquery-ui.min.css?v=1.0">
@@ -14,6 +22,8 @@
 <link rel="stylesheet" href="css/timeline.css?v=1.0">
 <link rel="stylesheet" href="css/metisMenu.min.css?v=1.0">
 <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+<link rel="stylesheet" href="css/login-form-elements.css">
+<link rel="stylesheet" href="css/login-style.css">
 
 
 <script src="js/jquery-1.10.2.min.js?v=1.0"/></script>

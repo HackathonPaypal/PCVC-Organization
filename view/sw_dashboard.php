@@ -91,7 +91,7 @@ function invokeForms(selectObj, client_id_str)
 <body>
 <div id="wrapper" style="background-color:#24778E">
 	<?php include 'dashboard_navbar_view.php'; ?>
-	<div id="page-wrapper">
+	<div id="page-wrapper" class="hero-unit">
 	    <div class="row">
                 <div class="col-lg-12">
                     <h3 class="page-header" style="color:#2B87A2">Associated Client Details</h3>
@@ -111,14 +111,14 @@ function invokeForms(selectObj, client_id_str)
 			<?php if (isset($container) && isset($container->client_details_array))
 				{?>
 						<div class="table-responsive">
-							<table class="table">
+							<table class="col-md-12 table-bordered table-striped table-condensed">
 								<tr>
-									<th class="table-bordered ">Client Id</th>
-									<th class="table-bordered ">Client Name</th>
-									<th class="table-bordered ">Client Address</th>
-									<th class="table-bordered ">Client Phone Number</th>
-									<th class="table-bordered ">Client Enrollment Status</th>
-									<th class="table-bordered ">Actions</th>
+									<th class="table-bordered">Client Id</th>
+									<th class="table-bordered">Client Name</th>
+									<th class="table-bordered">Client Address</th>
+									<th class="table-bordered">Client Phone Number</th>
+									<th class="table-bordered">Client Enrollment Status</th>
+									<th class="table-bordered">Actions</th>
 								</tr>
 					<?php
 					foreach($container->client_details_array as $row)
