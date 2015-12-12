@@ -56,6 +56,19 @@ if(isset($_SESSION["error_info"]))
 <link rel="stylesheet" href="css/login-style.css">
 <link rel="stylesheet" href="css/font-awesome.css">
 
+<style>
+body
+{
+     background: url(images/vidiyal_logo.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height:50%;
+  width:100%;
+	 
+}
+</style>
+
 </head>
 <body>
 	<?php
@@ -121,17 +134,8 @@ if(isset($_SESSION["error_info"]))
 <script src="js/jquery-1.10.2.min.js"/></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.backstretch.min.js"></script> 
 <script>
-jQuery(document).ready(function() {
-	
-    /*
-        Fullscreen background
-    */
-    $.backstretch([
-                    "images/vidiyal_logo.png"
-	             ], {duration: 3000, fade: 750});
-    
+jQuery(document).ready(function() {   
     /*
         Form validation
     */
@@ -151,9 +155,7 @@ jQuery(document).ready(function() {
     		}
     	});
     	
-    });
-    
-    
+    });   
 });
 </script>
  </body> 

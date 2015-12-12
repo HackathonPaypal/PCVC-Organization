@@ -58,14 +58,9 @@ if (isset($_SESSION["error_info"]))
 
 <html>
 <head>
-
 <?php  include 'inc_head.php'; ?>
 
-<link rel="stylesheet" href="css/sumoselect.css?v=3.0">
-<script src="js/jquery.sumoselect.min.js?v=3.0"></script>
 <script>
-
-
 function invokeForms(selectObj, client_id_str)
 {
 	var selected_val = $('#' + selectObj).val();
@@ -89,75 +84,73 @@ function invokeForms(selectObj, client_id_str)
 </head>
 
 <body>
-<div id="wrapper" style="background-color:#24778E">
+ <!-- Main Container start -->
+<div class="dashboard-container">
+  <div class="container">
 	<?php include 'dashboard_navbar_view.php'; ?>
-	<div id="page-wrapper" class="hero-unit">
-	    <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="page-header" style="color:#2B87A2">Associated Client Details</h3>
-                </div>
-                <!-- /.col-lg-12 -->
-        </div>
-		<div id="errors_div">	
-		</div>		
-		<?php if( isset($show_failure_message) && isset($failure_message) ) { ?>
-			<div class="alert alert-info homealert" role="alert" align="center">
-			   <strong><?php echo $failure_message ?></strong>
-			</div>
-		<?php } ?>
- 
-		<div class="row">
-			<div class="col-lg-12">
-			<?php if (isset($container) && isset($container->client_details_array))
-				{?>
-						<div class="table-responsive">
-							<table class="col-md-12 table-bordered table-striped table-condensed">
-								<tr>
-									<th class="table-bordered">Client Id</th>
-									<th class="table-bordered">Client Name</th>
-									<th class="table-bordered">Client Address</th>
-									<th class="table-bordered">Client Phone Number</th>
-									<th class="table-bordered">Client Enrollment Status</th>
-									<th class="table-bordered">Actions</th>
-								</tr>
-					<?php
-					foreach($container->client_details_array as $row)
-					{?>
-						<tr>
-							<td class="table-bordered "><?php echo $row->m_client_id; ?></td>
-							<td class="table-bordered "><?php echo $row->m_name; ?></td>
-							<td class="table-bordered "><?php echo $row->m_address; ?></td>
-							<td class="table-bordered "><?php echo $row->m_phonenumber; ?></td>
-							<td class="table-bordered "><?php echo $row->m_status; ?></td>
-							<td class="table-bordered ">
-								<select name="client_action" class="dropdown" id="client_action_<?php echo $row->m_client_id; ?>" >
-									<option value="HOSPITAL_FOLLOWUP">Hospital follow-up</option>
-									<option value="HOSPITAL_DISCHARGE">Hospital discharge</option>
-									<option value="PHONE_FOLLOWUP">Phone follow-up</option>
-									<option value="HOME_VISIT">Home visit</option>
-									<option value="FEEDBACK">Feedback</option>
-								</select>
-								<input type="button" value="Open" class="btn btn-sm btn-primary" onclick="return invokeForms('client_action_<?php echo $row->m_client_id; ?>', '<?php echo $row->m_client_id; ?>')"/>
-							</td>
-						</tr>
-	     <?php } ?>
-		 				</table>
-					</div>				
-			<?php	}?>
-			</div>
+
+	<!-- Dashboard Wrapper Start -->
+	<div class="dashboard-wrapper-lg">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 style="color:#000">Associated Client Details</h1>
 		</div>
 	</div>
+	<div id="errors_div"></div>		
+	<?php if( isset($show_failure_message) && isset($failure_message) ) { ?>
+		<div class="alert alert-info homealert" role="alert" align="center">
+		   <strong><?php echo $failure_message ?></strong>
+		</div>
+	<?php } ?>
+	   
+	  <!-- Row starts -->
+	<div class="row">
+		<div class="col-lg-12">
+		<?php if (isset($container) && isset($container->client_details_array)) { ?>
+			<div class="table-responsive">
+				<table class="col-md-12 table-bordered table-striped table-condensed">
+					<tr>
+						<th class="table-bordered">Client Id</th>
+						<th class="table-bordered">Client Name</th>
+						<th class="table-bordered">Client Address</th>
+						<th class="table-bordered">Client Phone Number</th>
+						<th class="table-bordered">Client Enrollment Status</th>
+						<th class="table-bordered">Actions</th>
+					</tr>
+				<?php foreach($container->client_details_array as $row){ ?>
+					<tr>
+						<td class="table-bordered"><?php echo $row->m_client_id; ?></td>
+						<td class="table-bordered"><?php echo $row->m_name; ?></td>
+						<td class="table-bordered"><?php echo $row->m_address; ?></td>
+						<td class="table-bordered"><?php echo $row->m_phonenumber; ?></td>
+						<td class="table-bordered"><?php echo $row->m_status; ?></td>
+						<td class="table-bordered">
+							<select name="client_action" class="form-group" id="client_action_<?php echo $row->m_client_id; ?>" >
+								<option value="HOSPITAL_FOLLOWUP">Hospital follow-up</option>
+								<option value="HOSPITAL_DISCHARGE">Hospital discharge</option>
+								<option value="PHONE_FOLLOWUP">Phone follow-up</option>
+								<option value="HOME_VISIT">Home visit</option>
+								<option value="FEEDBACK">Feedback</option>
+							</select>
+							<input type="button" value="Open" class="btn btn-sm btn-info" onclick="return invokeForms('client_action_<?php echo $row->m_client_id; ?>', '<?php echo $row->m_client_id; ?>')"/>
+						</td>
+					</tr>
+				<?php } // end for loop ?>
+				</table>
+			</div>
+		<?php } // end if condition ?>
+		</div>
+	</div>
+	  <!-- Row ends -->
+	</div>
+	<!-- Dashboard Wrapper End -->
+  </div>
 </div>
-
-<script src="js/bootstrap-table.js?v=2.0"></script>
-<script src="js/locale/bootstrap-table-en-US.js?v=1.0"></script>
-<script src="js/bootstrap-table-editable.js?v=1.0"></script>
+    <!-- Main Container end -->
+<script src="js/bootstrap-table.min.js"></script>
+<script src="js/locale/bootstrap-table-en-US.js"></script>
+<script src="js/bootstrap-table-editable.js"></script>
 <script src="js/bootstrap-editable.js"></script>
-
-<script src="js/select2.min.js?v=1.0"></script>
-<script src="js/sb-admin-2.js?v=1.0"></script>
-<script src="js/metisMenu.min.js?v=1.0"></script>
-<script src="js/jquery.datetimepicker.js"></script>
 
 </body>
 </html>

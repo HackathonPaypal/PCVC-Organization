@@ -154,10 +154,10 @@
         pageNumber: 1,
         pageSize: 10,
         pageList: [10, 25, 50, 100],
-        paginationHAlign: 'right', //right, left
-        paginationVAlign: 'bottom', //bottom, top
+        paginationHAlign: 'left', //right, left
+        paginationVAlign: 'top', //bottom, top
         paginationDetailHAlign: 'left', //right, left
-        paginationDetailVAlign: 'bottom', //bottom, top
+        paginationDetailVAlign: 'top', //bottom, top
         search: false,
         searchAlign: 'right',
         selectItemName: 'btSelectItem',

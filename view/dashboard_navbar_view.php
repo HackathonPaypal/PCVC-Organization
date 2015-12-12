@@ -1,42 +1,21 @@
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color:#24778E;">
-	<div class="navbar-header" style="background-color:#24778E;width:250px">
-		<a class="navbar-brand" href="sw_dashboard.php" style="color:#fff"><img src="images/vidiyal_logo.png"  height="35" width="250"></a>
-	</div>
-	<!-- /.navbar-header -->
+	<!-- Sub Nav End -->
 	<?php $admin_name = ((isset($_COOKIE) && (isset($_COOKIE['admin_name']))) ? $_COOKIE['admin_name'] : "Admin") ; ?>
-	<ul class="nav navbar-top-links navbar-left">
-		<li style="color:#337ab7">
-			<a href="sw_dashboard.php" style="color:#fff;font-weight:bold;font-size:14px;"><i class="fa fa-search" style="font-size:14px;color:#000;padding:0 10px"></i>Dashboard</a>
-		</li>
-		<li style="color:#337ab7;">
-			<a href="client_intake_form.php" style="color:#fff;font-weight:bold;font-size:14px"><i class="fa fa-th" style="font-size:14px;color:#000;padding:0 10px"></i>Add Client</a>
-		</li>
-		<li style="color:#337ab7;">
-			<a href="client_report_view.php" style="color:#fff;font-weight:bold;font-size:14px"><i class="fa fa-th" style="font-size:14px;color:#000;padding:0 10px"></i>Reports</a>
-		</li>
-	</ul>
-	<ul class="nav navbar-top-links navbar-right">	
-		<li style="color:#337ab7"><span style="color:#fff">Welcome <?php echo $admin_name?></span></li>
-		<li style="color:#337ab7"><a href="logout_view.php" style="color:#fff"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
-		<!-- /.dropdown -->
-	</ul>
-	<!-- /.navbar-top-links -->
 
-	<div id="sidebar_content" class="navbar-default sidebar" role="navigation">
-		<div class="sidebar-nav navbar-collapse" style="background-color:#D3E4E8;">
-			<ul class="nav" id="side-menu">
-				<li style="color:#337ab7">
-					<a href="sw_dashboard.php" style="color:#2F525B;font-weight:bold;font-size:14px;"><i class="fa fa-search" style="font-size:14px;color:#000;padding:0 10px"></i>Dashboard</a>
-				</li>
-				<li style="color:#337ab7;">
-					<a href="client_intake_form.php" style="color:#2F525B;font-weight:bold;font-size:14px"><i class="fa fa-th" style="font-size:14px;color:#000;padding:0 10px"></i>Add Client</a>
-				</li>
-                <li style="color:#337ab7;">
-					<a href="client_report_view.php" style="color:#2F525B;font-weight:bold;font-size:14px"><i class="fa fa-th" style="font-size:14px;color:#000;padding:0 10px"></i>Reports</a>
-				</li>
-			</ul>
-		</div>
-		<!-- /.sidebar-collapse -->
+	<div class="sub-nav">
+	  <ul>
+		<li><a href="sw_dashboard.php">Welcome <?php echo $admin_name?></a></li>
+		<li>
+		  <a href="sw_dashboard.php" <?php if(strpos($_SERVER['REQUEST_URI'], 'sw_dashboard')) { echo 'class="selected"'; } ?> >Dashboard</a>
+		</li>
+		<li>
+		  <a href="client_intake_form.php" <?php if(strpos($_SERVER['REQUEST_URI'], 'client_intake_form')) { echo 'class="selected"'; } ?> >Add Client</a>
+		</li>
+		<li>
+		  <a href="client_report_view.php" <?php if(strpos($_SERVER['REQUEST_URI'], 'client_report_view')) { echo 'class="selected"'; } ?> >Reports</a>
+		</li>
+		<li>
+		  <a href="logout_view.php">Logout</a>
+		</li>
+	  </ul>
 	</div>
-	<!-- /.navbar-static-side -->
-</nav>
+	<!-- Sub Nav End -->

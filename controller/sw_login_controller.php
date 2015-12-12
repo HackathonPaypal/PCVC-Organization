@@ -58,10 +58,10 @@ class SWLoginController {
 			}
 			
 			$_SESSION["error_info"] = $error_info;
-			$redirect_info = array("UserName" => $sw_user_details->login_username, "Password" => $sw_user_details->password);
-			$_SESSION["redirect_info"] = $redirect_info;
-			$_SESSION['user_name'] = json_encode($sw_user_details->login_username);
-			$_SESSION['password']  = json_encode($sw_user_details->password);
+			// $redirect_info = array("UserName" => $sw_user_details->login_username, "Password" => $sw_user_details->password);
+			// $_SESSION["redirect_info"] = $redirect_info;
+			// $_SESSION['user_name'] = json_encode($sw_user_details->login_username);
+			// $_SESSION['password']  = json_encode($sw_user_details->password);
 		}
 		else
 		{

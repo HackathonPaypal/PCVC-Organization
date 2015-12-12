@@ -19,6 +19,19 @@ textarea.form-control {
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
 
+input.error {
+    border: 1px dotted red;
+}
+
+label.error {
+    color: red;
+    font-style: italic;
+	margin-left: 103px;
+}
+
+.block{display:block;}
+label.error{display:none;}
+
 textarea, 
 textarea.form-control {
 	padding-top: 10px;
@@ -44,8 +57,6 @@ textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { co
 
 input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, 
 textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
-
-
 
 button.btn {
 	height: 50px;

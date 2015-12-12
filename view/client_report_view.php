@@ -61,51 +61,55 @@ if (isset($_SESSION["error_info"]))
 
 <?php  include 'inc_head.php'; ?>
 
-<link rel="stylesheet" href="css/sumoselect.css?v=3.0">
-<script src="js/jquery.sumoselect.min.js?v=3.0"></script>
-
 <link rel="stylesheet" href="css/bootstrap-table.min.css">
 <link rel="stylesheet" href="css/bootstrap-editable.css">
 
 </head>
 
 <body>
-<div id="wrapper" style="background-color:#24778E">
+<!-- Main Container start -->
+<div class="dashboard-container">
+  <div class="container">
 	<?php include 'dashboard_navbar_view.php'; ?>
-	<div id="page-wrapper">
-	    <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="page-header" style="color:#2B87A2">All Client Details</h3>
-                </div>
-                <!-- /.col-lg-12 -->
-        </div>
-		<div id="errors_div">	
-		</div>		
+	<!-- Dashboard Wrapper Start -->
+	<div class="dashboard-wrapper-lg">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 style="color:#000">Reports View</h1>
+			</div>
+		</div>
+		<div id="errors_div"></div>		
 		<?php if( isset($show_failure_message) && isset($failure_message) ) { ?>
 			<div class="alert alert-info homealert" role="alert" align="center">
 			   <strong><?php echo $failure_message ?></strong>
 			</div>
 		<?php } ?>
- 
+		  <!-- Row starts -->
 		<div class="row">
 			<div class="col-lg-12">
 			<?php if (isset($container) && isset($container->client_form_details_array))
 				{?>
-				        <div id="toolbar"></div>
-				<table id="client_details_form_table" data-show-export="true" data-sortable="true">
+				<div class="table-responsive">
+				<div id="toolbar" class="widget-body"></div>
+				<table id="client_details_form_table" class="col-md-12 table-bordered table-striped table-condensed" data-show-export="true" data-sortable="true">
 				</table>
+				</div>
 			<?php	}?>
 			</div>
 		</div>
+	  <!-- Row ends -->
 	</div>
-</div>
+	<!-- Dashboard Wrapper End -->
+  </div>
+</div> 
 
-<script src="js/bootstrap-table.js?v=2.0"></script>
-<script src="js/locale/bootstrap-table-en-US.js?v=1.0"></script>
-<script src="js/bootstrap-table-editable.js?v=1.0"></script>
+<script src="js/bootstrap-table.min.js"></script>
+<script src="js/locale/bootstrap-table-en-US.js"></script>
+<script src="js/bootstrap-table-editable.js"></script>
 <script src="js/bootstrap-editable.js"></script>
 <script src="js/bootstrap-table-export.js"></script>
 <script src="js/tableExport.js"></script>
+
 <?php if (isset($container) && isset($container->client_form_details_array))
 {?>
 <script>
@@ -115,12 +119,12 @@ if (isset($_SESSION["error_info"]))
         $('#client_details_form_table').bootstrapTable({
             data: data,
 			pagination: true,
-			pageSize: 20,
-			search: true,
+			paginationVAlign: 'top',			
+			pageSize: 200,
 			sortable: true,
+			search: true,
 			toolbar: '#toolbar',
 			showColumns: true,
-			paginationVAlign: 'top',
             columns: [
 			{
                 field: 'client_id',
