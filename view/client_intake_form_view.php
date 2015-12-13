@@ -300,7 +300,7 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 				  <input type="hidden" name="client_enrolled_by" value="<?php if((isset($_COOKIE) && (isset($_COOKIE['admin_name'])))) { echo  $_COOKIE['admin_name'] ; } ?>">
-				  <button type="submit" id="saveForm" class="btn btn-info" name="submit">Save the details</button>
+				  <button type="submit" id="saveForm" class="btn btn-info">Save the details</button>
 				</div>
             </div>			
         </div>

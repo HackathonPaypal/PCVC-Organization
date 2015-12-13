@@ -73,11 +73,6 @@ if (isset($_SESSION["error_info"]))
 	<?php include 'dashboard_navbar_view.php'; ?>
 	<!-- Dashboard Wrapper Start -->
 	<div class="dashboard-wrapper-lg">
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 style="color:#000">Reports View</h1>
-			</div>
-		</div>
 		<div id="errors_div"></div>		
 		<?php if( isset($show_failure_message) && isset($failure_message) ) { ?>
 			<div class="alert alert-info homealert" role="alert" align="center">

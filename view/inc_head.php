@@ -25,6 +25,7 @@
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-select.js"></script>
+<script src="js/jquery.validate.min.js"></script>
 
 <style>
 .dashboard-wrapper-lg

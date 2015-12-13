@@ -1,98 +1,109 @@
-	<div id="form_container">
-	
-		<!-- <h1><a>Phone Follow-Up Check List</a></h1> -->
-		<form id="form_1076783" class="appnitro" enctype="multipart/form-data" method="post" action="client_phone_followup_save_view.php">
-					<div class="form_description">
-			<h2>Phone Follow-Up Check List</h2>
-			<p></p>
-		</div>						
-			<ul >
-						<li id="li_1" >
-		<label class="description" for="client_id">Client ID </label>
-		<div>
-			<input id="element_1" name="client_id" class="element text medium" type="text" maxlength="255" value="<?php if(isset($_GET) && isset($_GET['client_id'])) { echo $_GET['client_id'];}?>" readonly> 
-		</div> 
-		</li>		<li id="li_2" >
-		<label class="description" for="phone_date">Phone Follow Up Date </label>
-		<div>
-			<input type="text" class="element text medium" id="phone_date" name="phone_date" readonly value="<?php echo date('d/m/Y')?>">
-		</div> 
-		</li>		<li id="li_3" >
-		<label class="description" for="last_phone_date">Last Called Date </label>
-		<div>
-			<input type="text" class="element text medium" id="last_phone_date" name="last_phone_date" readonly value="<?php echo date('d/m/Y')?>">
-		</div> 
-		</li>		<li id="li_4" >
-		<label class="description" for="conversation">Conversation Held With (Name & Relation) </label>
-		<div>
-			<input id="element_4" name="conversation" class="element text large" type="text" maxlength="255" value=""/> 
-		</div> 
-		</li>		<li id="li_5" >
-		<label class="description" for="conversation_status">Status Of Phone Conversation </label>
-		<div>
-			<textarea id="element_5" name="conversation_status" class="element textarea medium"></textarea> 
-		</div> 
-		</li>		<li class="section_break">
-			<h3>Medical History</h3>
-			<p></p>
-		</li>		<li id="li_9" >
-		<label class="description" for="element_9">Wound Recovery </label>
-		<span>
-			<input id="element_9_1" name="client_wound_recovery" class="element checkbox" type="checkbox" value="Presence of open wounds" />
-            <label class="choice" for="element_9_1">Presence of open wounds</label>
-            <input id="element_9_2" name="client_wound_recovery" class="element checkbox" type="checkbox" value="Wounds healed" />
-            <label class="choice" for="element_9_2">Wounds healed</label>
-            <input id="element_9_3" name="client_wound_recovery" class="element checkbox" type="checkbox" value="Formation/Thickening of scars" />
-            <label class="choice" for="element_9_3">Formation/Thickening of scars</label>
-            <input id="element_9_4" name="client_wound_recovery" class="element checkbox" type="checkbox" value="Contractures" />
-            <label class="choice" for="element_9_4">Contractures</label>
-
-		</span> 
-		</li>		<li class="section_break">
-			<h3>Psychological History</h3>
-			<p></p>
-		</li>		<li id="li_10" >
-		<label class="description" for="element_10">Sleeping Pattern </label>
-		<div>
-		<select class="element select medium" id="element_10" name="client_sleeping_pattern"> 
-			<option value="Disturbed Sleep" >Disturbed Sleep</option>
-            <option value="Nightmares" >Nightmares</option>
-            <option value="Excess Sleeping" >Excess Sleeping</option>
-            <option value="Normal Sleep" selected="selected">Normal Sleep</option>
-
-		</select>
-		</div> 
-		</li>		<li id="li_11" >
-		<label class="description" for="element_11">Emotional Status </label>
-		<div>
-		<select class="element select medium" id="element_11" name="client_emotional_status"> 
-			<option value="Feels low" >Feels low</option>
-            <option value="Cries offten" >Cries offten</option>
-            <option value="Remains isolated" >Remains isolated</option>
-            <option value="Aggressive" >Aggressive</option>
-            <option value="Normal" selected="selected">Normal</option>
-
-		</select>
-		</div> 
-		</li>		<li id="li_12" >
-		<label class="description" for="element_12">Home Visit </label>
-		<span>
-			<input id="element_12_1" name="client_home_visit" class="element radio" type="radio" value="Yes" />
-            <label class="choice" for="element_12_1">Yes</label>
-            <input id="element_12_2" name="client_home_visit" class="element radio" type="radio" value="No" />
-            <label class="choice" for="element_12_2">No</label>
-
-		</span> 
-		</li>		<li id="li_8" >
-		<label class="description" for="element_8">Remarks & Summary </label>
-		<div>
-			<textarea id="element_8" name="client_remarks" class="element textarea medium"></textarea> 
-		</div> 
-		</li>
-					<li class="buttons">
-				<input id="client_enrolled_by" type="hidden" name="client_enrolled_by" value="<?php if((isset($_COOKIE) && (isset($_COOKIE['admin_name'])))) { echo  $_COOKIE['admin_name'] ; } ?>" />
-				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-		</li>
-			</ul>
-		</form>	
+<div class="widget">
+	<div class="widget-header">
+		<div class="title">Phone Follow-Up Check List</div>
 	</div>
+	
+	<form class="form-horizontal no-margin" enctype="multipart/form-data" method="post" action="client_phone_followup_save_view.php" id="client_phone_followup_form">
+		<div class="widget-body">
+			<div class="form-group">
+				<label for="ClientId" class="col-sm-2 control-label">Client ID</label>
+				<div class="col-sm-10">
+					<input name="client_id" class="form-control" type="text" readonly value="<?php if(isset($_GET) && isset($_GET['client_id'])) { echo $_GET['client_id'];} ?>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="FollowUpDate" class="col-sm-2 control-label">Phone Follow Up Date</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="phone_date" name="phone_date" readonly value="<?php echo date('d/m/Y')?>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="FollowUpDate" class="col-sm-2 control-label">Last Called Date</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="last_phone_date" name="last_phone_date" readonly value="<?php echo date('d/m/Y')?>">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="conversation" class="col-sm-2 control-label">Conversation Held With (Name & Relation)</label>
+				<div class="col-sm-10">
+					<input name="conversation" class="form-control" type="text" value=""> 
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="ConversationStatus" class="col-sm-2 control-label">Status Of Phone Conversation</label>
+				<div class="col-sm-10">
+					<textarea name="conversation_status" class="form-control" rows="5"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="widget-header">
+			<div class="title">Medical History</div>
+		</div>
+
+		<div class="widget-body">		
+			<div class="form-group">
+				<label for="WoundRecovery" class="col-sm-2 control-label">Wound Recovery</label>
+				<div class="col-sm-2" style="text-align:left">
+					<div class="checkbox">
+						<label><input name="client_wound_recovery" type="checkbox" value="Presence of open wounds">Presence of open wounds</label><br>
+						<label><input name="client_wound_recovery" type="checkbox" value="Wounds healed">Wounds healed</label><br>
+						<label><input name="client_wound_recovery" type="checkbox" value="Formation/Thickening of scars">Formation/Thickening of scars</label><br>
+						<label><input name="client_wound_recovery" type="checkbox" value="Contractures">Contractures</label><br>
+                    </div>					
+				</div>
+			</div>
+		</div>
+
+		<div class="widget-header">
+			<div class="title">Psychological History</div>
+		</div>
+
+		<div class="widget-body">		
+			<div class="form-group">
+				<label for="SleepingPattern" class="col-sm-2 control-label">Sleeping Pattern</label>
+				<div class="col-sm-10">
+					<select class="form-control" name="client_sleeping_pattern"> 
+						<option value="Disturbed Sleep">Disturbed Sleep</option>
+						<option value="Nightmares">Nightmares</option>
+						<option value="Excess Sleeping">Excess Sleeping</option>
+						<option value="Normal Sleep" selected="selected">Normal Sleep</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="EmotionalStatus" class="col-sm-2 control-label">Emotional Status</label>
+				<div class="col-sm-10">
+					<select class="form-control" name="client_emotional_status"> 
+						<option value="Feels low">Feels low</option>
+						<option value="Cries offten">Cries offten</option>
+						<option value="Remains isolated">Remains isolated</option>
+						<option value="Aggressive">Aggressive</option>
+						<option value="Normal" selected="selected">Normal</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="HomeVisit" class="col-sm-2 control-label">Home Visit</label>
+				<div class="col-sm-1" style="text-align:left">
+					<div class="radio">
+						<label><input name="client_home_visit" class="radio" type="radio" value="Yes">Yes</label><br>
+                        <label><input name="client_home_visit" class="radio" type="radio" value="No">No</label>
+                    </div>					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="RemarksSummary" class="col-sm-2 control-label">Remarks & Summary</label>
+				<div class="col-sm-10">
+					<textarea name="client_remarks" class="form-control" rows="5"></textarea>
+				</div>
+			</div>			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+				  <input type="hidden" name="client_enrolled_by" value="<?php if((isset($_COOKIE) && (isset($_COOKIE['admin_name'])))) { echo  $_COOKIE['admin_name'] ; } ?>">
+				  <button type="submit" id="saveForm" class="btn btn-info">Save the details</button>
+				</div>
+            </div>			
+        </div>
+	</form>	
+</div>

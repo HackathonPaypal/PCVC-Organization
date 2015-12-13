@@ -8,7 +8,7 @@
 		  <a href="sw_dashboard.php" <?php if(strpos($_SERVER['REQUEST_URI'], 'sw_dashboard')) { echo 'class="selected"'; } ?> >Dashboard</a>
 		</li>
 		<li>
-		  <a href="client_intake_form.php" <?php if(strpos($_SERVER['REQUEST_URI'], 'client_intake_form')) { echo 'class="selected"'; } ?> >Add Client</a>
+		  <a href="client_intake_form.php" <?php if(strpos($_SERVER['REQUEST_URI'], 'form')) { echo 'class="selected"'; } ?> >Add Client</a>
 		</li>
 		<li>
 		  <a href="client_report_view.php" <?php if(strpos($_SERVER['REQUEST_URI'], 'client_report_view')) { echo 'class="selected"'; } ?> >Reports</a>

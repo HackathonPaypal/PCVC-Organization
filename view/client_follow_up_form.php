@@ -56,50 +56,34 @@ if (isset($_SESSION["error_info"]))
 
 <html>
 <head>
-
 <?php  include 'inc_head.php'; ?>
-
-<link rel="stylesheet" href="css/sumoselect.css?v=3.0">
-<link rel="stylesheet" href="view.css?v=3.0">
-<script src="view.js"></script>
-<script src="js/jquery.sumoselect.min.js?v=3.0"></script>
-
 </head>
 
 <body>
-<div id="wrapper" style="background-color:#24778E">
+<!-- Main Container start -->
+<div class="dashboard-container">
+  <div class="container">
 	<?php include 'dashboard_navbar_view.php'; ?>
-	<div id="page-wrapper">
-	    <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="page-header" style="color:#2B87A2">Hospital FollowUp</h3>
-                </div>
-                <!-- /.col-lg-12 -->
-        </div>
-		<div id="errors_div">	
-		</div>		
+
+	<!-- Dashboard Wrapper Start -->
+	<div class="dashboard-wrapper-lg">
+		<div id="errors_div"></div>		
 		<?php if( isset($show_failure_message) && isset($failure_message) ) { ?>
 			<div class="alert alert-info homealert" role="alert" align="center">
 			   <strong><?php echo $failure_message ?></strong>
 			</div>
 		<?php } ?>
-       		
+		   
+		  <!-- Row starts -->
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-lg-12 col-md-12">
 				<?php include 'client_follow_up_form_view.php'; ?>
 			</div>
 		</div>
+		  <!-- Row ends -->
 	</div>
+	<!-- Dashboard Wrapper End -->
+  </div>
 </div>
-
-<script src="js/bootstrap-table.js?v=2.0"></script>
-<script src="js/locale/bootstrap-table-en-US.js?v=1.0"></script>
-<script src="js/bootstrap-table-editable.js?v=1.0"></script>
-<script src="js/bootstrap-editable.js"></script>
-
-<script src="js/select2.min.js?v=1.0"></script>
-<script src="js/sb-admin-2.js?v=1.0"></script>
-<script src="js/metisMenu.min.js?v=1.0"></script>
-<script src="js/jquery.datetimepicker.js"></script>
 </body>
 </html>
